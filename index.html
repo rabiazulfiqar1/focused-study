@@ -9,14 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
     <script src="page.js" defer></script>
-</head>
 <body>
-    <img src="./wallpaper.png" alt="Wallpaper" class="fixed inset-0 -z-10 w-full h-full object-cover brightness-55">
-    <div id="time-container" class = "bg-white/20 top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 absolute rounded-2xl p-5 shadow-lg backdrop-blur-md">
-        <p id = "time" class="text-8xl font-['Bitcount_Grid_Double'] text-transparent bg-clip-text bg-gradient-to-t from-red-500 to-black"></p>
+    <img src="./wallpaper.png" alt="Wallpaper" class="fixed inset-0 -z-10 w-full h-full object-cover">
+        <div id="time-container" class = "bg-white/20 top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 absolute rounded-2xl p-5 shadow-lg backdrop-blur-md">
+            <p id = "time" class="text-8xl tracking-[-0.08em] font-['Bitcount_Grid_Double'] text-transparent bg-clip-text bg-gradient-to-t from-red-500 to-black"></p>
     </div>
     <div id="quote-container" class="bg-white/20 bottom-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 absolute rounded-2xl p-5 shadow-lg backdrop-blur-md">
         <p id="quote" class="text-2xl font-['Bitcount_Grid_Double'] text-black"></p>
+    </div>
+    <div id="music-container" class="bg-white/20 top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 absolute rounded-2xl p-5 shadow-lg backdrop-blur-md">
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0Kih96OwbwSZf8Mg7YW6r9?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 </body>
 </html>

@@ -1,7 +1,4 @@
-const express = require('express');
-const app = express();
-
-app.get('/quote', async (req, res) => {
+export default async (req, res) => {
     try {
         const response = await fetch('https://api.api-ninjas.com/v1/quotes?category=motivational', {
             headers: {
@@ -24,4 +21,5 @@ app.get('/quote', async (req, res) => {
     } catch (error) {
         return res.status(500).json({ error: 'Failed to fetch quote' });
     }
-});
+};
+

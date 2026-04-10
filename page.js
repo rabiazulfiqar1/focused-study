@@ -8,7 +8,10 @@ function updateTime() {
             hour12: true
         }
     );
-    document.getElementById('time').textContent = time12hr;
+    document.getElementById('time').textContent = time12hr
+        .replace('PM', '')
+        .replace('AM', '')
+        .trim();
     // document.getElementById('time').innerHTML = `<strong>${time12hr}</strong>`;
 };
 
