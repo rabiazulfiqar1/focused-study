@@ -1,13 +1,24 @@
-export default async (req, res) => {
+export default async function handler(req, res) {
+    if (req.method !== 'GET') {
+        res.setHeader('Allow', ['GET']);
+        return res.status(405).json({ error: 'Method not allowed' });
+    }
+
+    const apiKey = process.env.QUOTE_API_KEY;
+    if (!apiKey) {
+        return res.status(500).json({ error: 'Missing QUOTE_API_KEY' });
+    }
+
     try {
-        const response = await fetch('https://api.api-ninjas.com/v1/quotes?category=motivational', {
+        const response = await fetch('https://api.api-ninjas.com/v2/randomquotes?categories=success,wisdom', {
             headers: {
-                'X-Api-Key': process.env.QUOTE_API_KEY
+                'X-Api-Key': apiKey
             }
         });
 
         if (!response.ok) {
-            return res.status(response.status).json({ error: `Upstream error: ${response.status}` });
+            const details = await response.text();
+            return res.status(response.status).json({ error: `Upstream error: ${response.status}`, details });
         }
 
         const data = await response.json();
@@ -21,5 +32,5 @@ export default async (req, res) => {
     } catch (error) {
         return res.status(500).json({ error: 'Failed to fetch quote' });
     }
-};
+}
 
