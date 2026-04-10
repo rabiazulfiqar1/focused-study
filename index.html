@@ -5,30 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clock</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+    <script src="page.js" defer></script>
 </head>
 <body>
-    <img src="./wallpaper.png" alt="Wallpaper" class="fixed inset-0 -z-10 w-full h-full object-cover">
+    <img src="./wallpaper.png" alt="Wallpaper" class="fixed inset-0 -z-10 w-full h-full object-cover brightness-55">
     <div id="time-container" class = "bg-white/20 top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 absolute rounded-2xl p-5 shadow-lg backdrop-blur-md">
-        <p id = "time" class="text-8xl font-bold text-white"></p>
+        <p id = "time" class="text-8xl font-['Bitcount_Grid_Double'] text-transparent bg-clip-text bg-gradient-to-t from-red-500 to-black"></p>
     </div>
-
-    <script>
-        function updateTime() {
-            let now = new Date();
-            const time12hr = now.toLocaleTimeString(
-                'en-US', {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit',
-                    hour12: true
-                }
-            );
-            console.log(time12hr);
-            document.getElementById('time').textContent = time12hr;
-            console.log(time12hr);
-        };
-
-        setInterval(updateTime, 1000);
-    </script>
+    <div id="quote-container" class="bg-white/20 bottom-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 absolute rounded-2xl p-5 shadow-lg backdrop-blur-md">
+        <p id="quote" class="text-2xl font-['Bitcount_Grid_Double'] text-black"></p>
+    </div>
 </body>
 </html>
