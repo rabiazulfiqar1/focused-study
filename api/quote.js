@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+module.exports = async (req, res) => {
 
     const apiKey = process.env.QUOTE_API_KEY;
     if (!apiKey) {
