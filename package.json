@@ -1,6 +1,7 @@
 {
   "name": "time",
   "version": "1.0.0",
+  "type": "module",
   "main": "page.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,8 +17,5 @@
     "url": "https://github.com/rabiazulfiqar1/focused-study/issues"
   },
   "homepage": "https://github.com/rabiazulfiqar1/focused-study#readme",
-  "description": "",
-  "dependencies": {
-    "express": "^5.2.1"
-  }
+  "description": ""
 }
