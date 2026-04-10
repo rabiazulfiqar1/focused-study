@@ -1,4 +1,4 @@
-export async function handler(req, res) {
+export default async function handler(req, res) {
 
     const apiKey = process.env.QUOTE_API_KEY;
     if (!apiKey) {
@@ -28,5 +28,5 @@ export async function handler(req, res) {
     } catch (error) {
         return res.status(500).json({ error: 'Failed to fetch quote' });
     }
-};
+}
 
